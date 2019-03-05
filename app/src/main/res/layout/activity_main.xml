@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="ca.sa.generalmotorcars.models.Manufacture"/>
+        <import type="java.util.List"/>
+        <variable
+            name="manufactures"
+            type="List&lt;Manufacture>"/>
+        <variable
+            name="childLayoutId"
+            type="int"/>
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/swipe_refresh_main_layout">
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recycler_view_main_layout"
+                app:manufacturesList="@{manufactures}"
+                app:childLayoutId="@{@layout/recycler_item_view}"/>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+    </RelativeLayout>
+</layout>
