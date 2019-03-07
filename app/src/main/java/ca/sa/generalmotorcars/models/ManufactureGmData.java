@@ -6,17 +6,17 @@ import android.os.Parcelable;
 /**
  * Created by samandeep on 05,March,2019
  */
-public class Manufacture implements Parcelable {
+public class ManufactureGmData implements Parcelable {
     private int modelNumber;
     private String modelName;
-    private int releaseYear;
+    public int releaseYear;
     private int price;
     private String features;
 
-    public Manufacture() {
+    public ManufactureGmData() {
     }
 
-    public Manufacture(int modelNumber, String modelName, int releaseYear, int price, String features) {
+    public ManufactureGmData(int modelNumber, String modelName, int releaseYear, int price, String features) {
         this.modelNumber=modelNumber;
         this.modelName = modelName;
         this.releaseYear = releaseYear;
@@ -24,7 +24,7 @@ public class Manufacture implements Parcelable {
         this.features = features;
     }
 
-    protected Manufacture(Parcel in) {
+    protected ManufactureGmData(Parcel in) {
         modelNumber=in.readInt();
         modelName = in.readString();
         releaseYear = in.readInt();
@@ -32,15 +32,15 @@ public class Manufacture implements Parcelable {
         features = in.readString();
     }
 
-    public static final Creator<Manufacture> CREATOR = new Creator<Manufacture>() {
+    public static final Creator<ManufactureGmData> CREATOR = new Creator<ManufactureGmData>() {
         @Override
-        public Manufacture createFromParcel(Parcel in) {
-            return new Manufacture(in);
+        public ManufactureGmData createFromParcel(Parcel in) {
+            return new ManufactureGmData(in);
         }
 
         @Override
-        public Manufacture[] newArray(int size) {
-            return new Manufacture[size];
+        public ManufactureGmData[] newArray(int size) {
+            return new ManufactureGmData[size];
         }
     };
 

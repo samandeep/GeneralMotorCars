@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GeneralMotorCars</string>
+    <string name="sort_by_year">Sort By Year</string>
 </resources>
